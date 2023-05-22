@@ -1111,7 +1111,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
         });
       });
       sectionsRows.push({
-        title: "Voltar Menu Inicial",
+        title: "Voltar ao Menu Inicial",
         rowId: `#`
       });
       const sections = [
@@ -1145,7 +1145,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
       });
       buttons.push({
         buttonId: `#`,
-        buttonText: { displayText: "Voltar Menu Inicial" },
+        buttonText: { displayText: "Voltar ao Menu Inicial" },
         type: 4
       });
 
@@ -1169,7 +1169,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
       queueOptions.forEach((option, i) => {
         options += `*[ ${option.option} ]* - ${option.title}\n`;
       });
-      options += `\n*[ # ]* - Voltar Menu Inicial`;
+      options += `\n*[ # ]* - Voltar ao Menu Inicial`;
 
       const textMessage = {
         text: formatBody(`\u200e${queue.greetingMessage}\n\n${options}`, ticket.contact),
@@ -1228,7 +1228,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
           });
         });
         sectionsRows.push({
-          title: "Voltar Menu Inicial",
+          title: "Voltar ao Menu Inicial",
           rowId: `#`
         });
         const sections = [
@@ -1262,7 +1262,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
         });
         buttons.push({
           buttonId: `#`,
-          buttonText: { displayText: "Voltar Menu Inicial" },
+          buttonText: { displayText: "Voltar ao Menu Inicial" },
           type: 4
         });
 
@@ -1287,7 +1287,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
         queueOptions.forEach((option, i) => {
           options += `*[ ${option.option} ]* - ${option.title}\n`;
         });
-        options += `\n*[ # ]* - Voltar Menu Inicial`;
+        options += `\n*[ # ]* - Voltar ao Menu Inicial`;
 
         const textMessage = {
           text: formatBody(`\u200e${currentOption.message}\n\n${options}`, ticket.contact),
@@ -1434,7 +1434,7 @@ const handleMessage = async (
          * Tratamento para avaliação do atendente
          */
 
-         // dev Ricardo: insistir a responder avaliação 
+         // DevTonn: insistir a responder avaliação 
          const rate_ = Number(bodyMessage);
 
          if ((ticket?.lastMessage.includes('_Insatisfeito_') || ticket?.lastMessage.includes('Por favor avalie nosso atendimento.')) &&  (!isFinite(rate_))) {
@@ -1454,7 +1454,7 @@ const handleMessage = async (
              debouncedSentMessage();
              return;
          }
-         // dev Ricardo
+         // DevTonn
 
         if (ticketTraking !== null && verifyRating(ticketTraking)) {
           handleRating(msg, ticket, ticketTraking);
